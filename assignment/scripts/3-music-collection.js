@@ -3,13 +3,14 @@ console.log('***** Music Collection *****')
 let collection = [];
 
 function addToCollection(title, artist, yearPublished) {
-	const album = {};
-	album.title = title;
-	album.artist = artist;
-	album.yearPublished = yearPublished;
-
+	const album = {
+		title,
+		artist,
+		yearPublished,
+	}
 	collection.push(album);
 	console.log('Album added to collection: ', album);
+	return album
 }
 
 console.log('********** Start of addToCollection **********')
@@ -32,14 +33,15 @@ console.log('********** End of addToCollection **********')
 
 console.log('********** Start of showCollection **********')
 
-function showCollection(Array) {
-	console.log('Albums is the current Collection is: ', array.length);
+function showCollection(array) {
+	console.log('Number of Albums in the current Collection are: ', array.length);
 
-	for (info in collection) {
-		console.log(info.title, 'by ', info.artist, ', published in', info.yearPublished);
+	for (let x of array) {
+		console.log(x.title + ' by ' + x.artist + ', published in ' + x.yearPublished);
 	}
 }
 
+showCollection(collection);
 
 
 
