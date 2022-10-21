@@ -26,6 +26,8 @@ addToCollection('Beautiful Mind', 'Rod Wave', 2022);
 
 addToCollection('I Never Liked You', 'Future', 2022);
 
+addToCollection('X 100pre', 'Bad Bunny', 2018);
+
 
 console.log('Entire Albums in Collection: ', collection);
 
@@ -40,14 +42,20 @@ function showCollection(array) {
 		console.log(x.title + ' by ' + x.artist + ', published in ' + x.yearPublished);
 	}
 }
-
 showCollection(collection);
-
-
-
-
-
-
 console.log('********** End of showCollection **********')
 
+function findByArtist(artist) {
+	let search = [];
 
+	for (let i = 0; i < collection.length; i++) {
+		if (artist === collection[i].artist) {
+			search.push(collection[i]);
+		}
+	}
+	return search;
+}
+
+console.log('Searching for "Bad Bunny"', findByArtist('Bad Bunny'));
+
+console.log('Searchingf for "Ludacris"', findByArtist('Ludacris'), "Does not appear in Collection");
