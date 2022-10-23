@@ -59,3 +59,27 @@ function findByArtist(artist) {
 console.log('Searching for "Bad Bunny"', findByArtist('Bad Bunny'));
 
 console.log('Searchingf for "Ludacris"', findByArtist('Ludacris'), "Does not appear in Collection");
+
+
+console.log('*********** STRETCH GOALS ***********');
+
+
+function search(artist, year) {
+	let searchResult = [];
+	for (let i = 0; i < collection.length; i++) {
+		if (collection[i].artist == artist && collection[i].yearPublished == year) {
+			searchResult.push(collection[i]);
+		}
+		else if (artist == null, year == null) {
+			searchResult = collection;
+		}
+		return searchResult;
+	}
+}
+
+
+console.log('Calling the search function for item not found ', search("Drake", 2018));
+console.log('Calling the search function for item found in collection', search('Bad Bunny', 2022));
+console.log('Calling the search function for album not in collection: ', search("Future", 2025));
+
+console.log('Calling search function with no parameters: ', search());
